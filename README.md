@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# Calculadora de Propinas 💲
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una calculadora de propinas, una herramienta útil que permite a los usuarios calcular fácilmente la propina basada en el total de la factura y el porcentaje de propina deseado. El objetivo de este proyecto es mejorar nuestras habilidades en React y TailwindCSS.
 
-Currently, two official plugins are available:
+## Características 🌟
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Cálculo de propinas basado en el total de la factura y el porcentaje de propina.
+- Interfaz de usuario amigable y fácil de usar.
+- Diseño responsivo que se ve bien en dispositivos móviles y de escritorio.
 
-## Expanding the ESLint configuration
+## Tecnologías Utilizadas 🛠
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Este proyecto utiliza las siguientes tecnologías:
 
-- Configure the top-level `parserOptions` property like this:
+- [**React**](https://es.reactjs.org/)
+- [**TailwindCSS**](https://tailwindcss.com/)
+- [**Vite**](https://vitejs.dev/)
+- [**Typescript**](https://www.typescriptlang.org/)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Instalación 🔧
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Para instalar y ejecutar este proyecto, sigue los siguientes pasos:
+
+1. Clona el repositorio `git clone https://github.com/EFZR/guitarLA.git`
+2. Instala las dependencias con `npm install`
+3. Ejecuta el proyecto con `npm run dev`
