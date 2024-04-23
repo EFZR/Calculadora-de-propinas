@@ -1,12 +1,8 @@
+import useOrder from "../hooks/useOrder";
 import { formatCurrency } from "../helpers";
-import { MenuItem, OrderItem } from "../types";
 
-type OrderContentsProps = {
-  order: OrderItem[];
-  removeItem: (id: MenuItem['id']) => void;
-};
-
-export default function OrderContents({ order, removeItem }: OrderContentsProps) {
+export default function OrderContents() {
+  const { order, removeItem } = useOrder();
   return (
     <div>
       <h2 className='font-black text-4xl'>Consumo</h2>

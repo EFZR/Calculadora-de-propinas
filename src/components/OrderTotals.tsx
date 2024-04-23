@@ -1,6 +1,8 @@
+import useOrder from "../hooks/useOrder";
 import { formatCurrency } from "../helpers";
 
-export default function OrderTotals({ subtotal }: { subtotal: number }) {
+export default function OrderTotals() {
+  const { subtotal } = useOrder();
   return (
     <>
       <div className="space-y-3">

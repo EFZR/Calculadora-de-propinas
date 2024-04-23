@@ -1,13 +1,9 @@
 import { MENUITEMS } from "./data"
 import MenuItem from "./components/MenuItem"
-import useOrder from "./hooks/useOrder"
 import OrderContents from "./components/OrderContents"
 import OrderTotals from "./components/OrderTotals"
 
 function App() {
-
-  const { order, subtotal, addItem, removeItem } = useOrder()
-
   return (
     <>
       <header className="bg-teal-400 py-5">
@@ -20,15 +16,15 @@ function App() {
           <div className="space-y-3 mt-10">
             {
               MENUITEMS.map((item) => (
-                <MenuItem key={item.id} item={item} addItem={addItem} />
+                <MenuItem key={item.id} item={item} />
               ))
             }
           </div>
 
         </div>
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
-          <OrderContents order={order} removeItem={removeItem} />
-          <OrderTotals subtotal={subtotal} />
+          <OrderContents />
+          <OrderTotals />
         </div>
       </main>
     </>
