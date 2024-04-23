@@ -6,7 +6,7 @@ export default function OrderTotals() {
   return (
     <>
       <div className="space-y-3">
-        <h2 className="font-black text-2xl">Totales y Propinas</h2>
+        <h2 className="font-black text-2xl text-teal-950">Totales y Propinas</h2>
         <p>
           Subtotal a pagar: {''}
           <span className="font-bold">{formatCurrency(subtotal)}</span>

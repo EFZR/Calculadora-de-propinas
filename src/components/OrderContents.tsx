@@ -5,7 +5,7 @@ export default function OrderContents() {
   const { order, removeItem } = useOrder();
   return (
     <div>
-      <h2 className='font-black text-4xl'>Consumo</h2>
+      <h2 className='font-black text-teal-950 text-4xl'>Consumo</h2>
 
       <div className="space-y-3 mt-10">
         {
