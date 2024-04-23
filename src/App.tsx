@@ -1,8 +1,12 @@
-// import { useState } from "react"
 import { MENUITEMS } from "./data"
 import MenuItem from "./components/MenuItem"
+import useOrder from "./hooks/useOrder"
+import OrderContents from "./components/OrderContents"
+import OrderTotals from "./components/OrderTotals"
 
 function App() {
+
+  const { order, subtotal, addItem, removeItem } = useOrder()
 
   return (
     <>
@@ -16,13 +20,16 @@ function App() {
           <div className="space-y-3 mt-10">
             {
               MENUITEMS.map((item) => (
-                <MenuItem key={item.id} item={item} />
+                <MenuItem key={item.id} item={item} addItem={addItem} />
               ))
             }
           </div>
 
         </div>
-        <h2>Consumo</h2>
+        <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
+          <OrderContents order={order} removeItem={removeItem} />
+          <OrderTotals subtotal={subtotal} />
+        </div>
       </main>
     </>
   )
