@@ -3,16 +3,26 @@ import type { OrderItem, MenuItem } from "../types";
 
 export interface orderContextProps {
   order: OrderItem[];
+  tip: number;
   subtotal: number;
+  tipAmount: number;
+  total: number;
   addItem: (item: MenuItem) => void;
   removeItem: (id: MenuItem['id']) => void;
+  addTip: (tip: number) => void;
+  placeOrder: () => void;
 }
 
 export const OrderContext = createContext<orderContextProps>({
   order: [],
+  tip: 0,
   subtotal: 0,
+  tipAmount: 0,
+  total: 0,
   addItem: () => { },
   removeItem: () => { },
+  addTip: () => { },
+  placeOrder: () => { },
 });
 
 function OrderProvider({ children }: { children: React.ReactNode }) {
@@ -20,7 +30,10 @@ function OrderProvider({ children }: { children: React.ReactNode }) {
   //#region States
 
   const [order, setOrder] = useState<OrderItem[]>([]);
+  const [tip, setTip] = useState<number>(0);
   const subtotal: number = useMemo(() => order.reduce((acc, item) => acc + item.price * item.quantity, 0), [order]);
+  const tipAmount: number = useMemo(() => subtotal * tip, [tip, order]);
+  const total: number = useMemo(() => subtotal + tipAmount, [subtotal, tipAmount]);
 
   //#endregion
 
@@ -53,12 +66,23 @@ function OrderProvider({ children }: { children: React.ReactNode }) {
     setOrder(updateOrder);
   };
 
+  // Add a tip to the order
+  const addTip = (tip: number) => {
+    setTip(tip);
+  };
+
+  // Clean order
+  const placeOrder = () => {
+    setOrder([]);
+    addTip(0);
+  }
+
   //#endregion
 
   //#region Return
 
   return (
-    <OrderContext.Provider value={{ order, subtotal, addItem, removeItem }}>
+    <OrderContext.Provider value={{ order, tip, subtotal, tipAmount, total, addItem, removeItem, addTip, placeOrder }}>
       {children}
     </OrderContext.Provider>
   )

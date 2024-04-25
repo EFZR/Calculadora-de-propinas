@@ -2,8 +2,11 @@ import { MENUITEMS } from "./data"
 import MenuItem from "./components/MenuItem"
 import OrderContents from "./components/OrderContents"
 import OrderTotals from "./components/OrderTotals"
+import TipPercantageForm from "./components/TipPercantageForm"
+import useOrder from "./hooks/useOrder"
 
 function App() {
+  const { order } = useOrder()
   return (
     <>
       <header className="bg-teal-400 py-5">
@@ -23,8 +26,17 @@ function App() {
 
         </div>
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
-          <OrderContents />
-          <OrderTotals />
+          {
+            order.length > 0 ? (
+              <>
+                <OrderContents />
+                <TipPercantageForm />
+                <OrderTotals />
+              </>
+            ) : (
+              <p className="text-center">Orden vacia</p>
+            )
+          }
         </div>
       </main>
     </>

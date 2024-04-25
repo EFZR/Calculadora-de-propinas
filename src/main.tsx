@@ -5,9 +5,9 @@ import OrderProvider from './context/orderProvider.tsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <OrderProvider>
-    <React.StrictMode>
+  <React.StrictMode>
+    <OrderProvider>
       <App />
-    </React.StrictMode>,
-  </OrderProvider>
+    </OrderProvider>
+  </React.StrictMode>,
 )
