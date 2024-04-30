@@ -21,6 +21,6 @@ Este proyecto utiliza las siguientes tecnologías:
 
 Para instalar y ejecutar este proyecto, sigue los siguientes pasos:
 
-1. Clona el repositorio `git clone https://github.com/EFZR/guitarLA.git`
+1. Clona el repositorio `git clone https://github.com/EFZR/Calculadora-de-propinas.git`
 2. Instala las dependencias con `npm install`
 3. Ejecuta el proyecto con `npm run dev`
