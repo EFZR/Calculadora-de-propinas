@@ -7,6 +7,7 @@ Este proyecto es una calculadora de propinas, una herramienta útil que permite 
 - Cálculo de propinas basado en el total de la factura y el porcentaje de propina.
 - Interfaz de usuario amigable y fácil de usar.
 - Diseño responsivo que se ve bien en dispositivos móviles y de escritorio.
+- Uso de hooks de React `useReducer` y `useContext` para manejar el estado y la lógica de la aplicación.
 
 ## Tecnologías Utilizadas 🛠
 
