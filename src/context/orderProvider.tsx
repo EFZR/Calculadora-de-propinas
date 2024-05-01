@@ -1,5 +1,5 @@
 import { useReducer, useMemo, createContext } from "react";
-import { activityReducer, initialState } from "../reducer/order-reducer";
+import { orderReducer, initialState } from "../reducer/order-reducer";
 import type { OrderItem, MenuItem } from "../types";
 
 export interface orderContextProps {
@@ -30,7 +30,7 @@ function OrderProvider({ children }: { children: React.ReactNode }) {
 
   //#region States
 
-  const [state, dispatch] = useReducer(activityReducer, initialState);
+  const [state, dispatch] = useReducer(orderReducer, initialState);
   const subtotal: number = useMemo(() => state.order.reduce((acc, item) => acc + item.price * item.quantity, 0), [state.order]);
   const tipAmount: number = useMemo(() => subtotal * state.tip, [state.tip, state.order]);
   const total: number = useMemo(() => subtotal + tipAmount, [subtotal, tipAmount]);

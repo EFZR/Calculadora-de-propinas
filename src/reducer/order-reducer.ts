@@ -1,24 +1,24 @@
 import type { OrderItem, MenuItem } from "../types";
 
-export type ActivityActions =
+export type OrderActions =
   | { type: "add-item"; payload: { item: MenuItem } }
   | { type: "remove-item"; payload: { id: MenuItem["id"] } }
   | { type: "add-tip"; payload: { tip: number } }
   | { type: "place-order" };
 
-export type ActivityState = {
+export type OrderState = {
   order: OrderItem[],
   tip: number,
 };
 
-export const initialState: ActivityState = {
+export const initialState: OrderState = {
   order: [],
   tip: 0,
 };
 
-export const activityReducer = (
-  state: ActivityState = initialState,
-  action: ActivityActions
+export const orderReducer = (
+  state: OrderState = initialState,
+  action: OrderActions
 ) => {
   if (action.type === "add-item") {
     const itemExists = state.order.find(
